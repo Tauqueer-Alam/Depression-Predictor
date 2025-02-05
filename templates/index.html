@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Predictor</title>
+    <link rel="stylesheet" href="style.css">
+   <style>
+    *{
+    margin: 0;
+    padding: 0;
+}
+header{
+    height: 80px;
+    background-color: rgb(17, 106, 76);
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-color: rgb(114, 177, 179);
+}
+
+
+.container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+.form-content {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 80%;
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 50px 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#error-msg {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+.list ul li a:hover{
+    color: #45a049;
+}
+.header h1 a{
+    text-decoration: none;
+    color:black;
+}
+   </style> 
+</head>
+<body>
+    
+<header>
+        <h1>Depression Predictor</h1>
+</header>
+
+<div>
+
+    <div class="container">
+        <div class="form-content">
+            <div class="form-container">
+
+                <form id="ckdForm"  action="/predict" method="post">
+                    <div class="form-group">
+                        <label for="gender">Gender(Male:1 , Female:0)</label>
+                        <input type="text" id="gender" name="gender" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="text" id="age" name="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ap">Academic Pressure(0-5)</label>
+                        <input type="text" id="ap" name="ap" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cgpa">CGPA</label>
+                        <input type="text" id="cgpa" name="cgpa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ss">Study Satisfaction(0-5)</label>
+                        <input type="text" id="ss" name="ss" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sl">Sleep Duration(0: 5-6 hours, 1: 7-8 hours, 2: Less than 5 hours, 3: More than 8 hours, 4:Others)</label>
+                        <input type="text" id="sl" name="sl" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dh">Dietary Habits (0-Healthy, 1-Moderate, 2-Unhealthy, 3-Others)</label>
+                        <input type="text" id="dh" name="dh" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="st">Have you ever had suicidal thoughts? (0 or 1)</label>
+                        <input type="text" id="st" name="st" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sh">Study Hours</label>
+                        <input type="text" id="sh" name="sh" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fs">Financial Stress(1-5)</label>
+                        <input type="text" id="fs" name="fs" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fh">Family History of Mental Illness (0 or 1)</label>
+                        <input type="text" id="fh" name="fh" required>
+                    </div>
+                    <button type="submit">Check</button>
+                </form>
+                <p id="error-msg"></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
